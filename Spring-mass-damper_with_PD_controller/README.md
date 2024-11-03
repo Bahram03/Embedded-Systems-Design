@@ -1,5 +1,6 @@
 # Embedded Systems - Homework 1 Report
 
+
 ## Introduction
 This report covers the modeling and control of a mass-spring-damper system using Simulink, with step-by-step illustrations of the process. The goal was to understand system response under various input forces and the effect of Proportional-Derivative (PD) control. 
 
@@ -25,11 +26,26 @@ We modeled a mass-spring-damper system with the following parameters:
 
 The system follows this equation of motion:
 
-\[
+$$
 F(t) = k \cdot x(t) + b \cdot \frac{dx(t)}{dt} + m \cdot \frac{d^2x(t)}{dt^2}
-\]
+$$
+
+and this is the Proportional-Derivative (PD) control law:
+
+$$
+F(t) = -K_p \cdot x(t) - K_d \cdot \frac{dx(t)}{dt}
+$$
+
 
 We used integrator blocks in Simulink to set up the model and simulate the system behavior.
+here's the model without controller : 
+
+![without_controller](screenshots/without_controller.jpg)
+
+and this is the model with addition of controller:
+
+![with_controller](screenshots/with_controller.jpg)
+
 
 ### Part B: Simulation Process and Response
 We tested the system under different conditions and captured each step in the process. Below are the screenshots and descriptions of each stage.
@@ -99,7 +115,3 @@ Throughout the process, adjusting \( K_p \) and \( K_d \) values revealed the fo
 
 ## Conclusion
 This exercise provided a comprehensive understanding of system dynamics and control through the mass-spring-damper model. By applying PD control and adjusting the gains, we achieved a stable response, demonstrating the significance of both proportional and derivative control in embedded system design.
-
----
-
-**Note**: All images used in this report are from the screenshots folder in sequential order.
